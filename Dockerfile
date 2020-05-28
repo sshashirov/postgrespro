@@ -34,7 +34,7 @@ RUN mkdir --parent /var/run/postgresql "$PGDATA" /docker-entrypoint-initdb.d \
   && chown --recursive postgres:postgres /var/run/postgresql "$PGDATA" \
   && chmod g+s /var/run/postgresql
 
-COPY container/docker-entrypoint.sh /
+COPY container/docker-entrypoint.sh
 COPY container/postgresql.conf.sh /docker-entrypoint-initdb.d
 
 ENTRYPOINT ["/docker-entrypoint.sh"]
